@@ -1,12 +1,11 @@
-from django.urls import path
-from authentication.views import InstitutionRegisterView
-from . import views
+from rest_framework.routers import DefaultRouter
+from authentication.views import InstitutionViewSet
 
 
-urlpatterns = [
-    path('', views.home, name="home"),
-    path('register/', InstitutionRegisterView.as_view(), name="register"),
-    path('login/', views.loginUser, name="login"),
-    path('logout/', views.logoutUser, name="logout"),
+router = DefaultRouter()
+router.register('institutions', InstitutionViewSet, basename='institutions')
 
-]
+
+urlpatterns = []
+
+urlpatterns += router.urls
