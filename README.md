@@ -71,7 +71,7 @@ This is  a web application that allows school administrators to easily manage th
 
 ### Before executing the following commands, always make sure you are at the root of the project.
 
-5. Migrate the data to the database (`Sqllite` by default): <br>
+5. Migrate the data to the database : <br>
 
         python manage.py migrate
 
