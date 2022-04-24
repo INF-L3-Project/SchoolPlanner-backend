@@ -65,7 +65,7 @@ This is  a web application that allows school administrators to easily manage th
 
         pip install -r requirements.txt
 
-6. Inside *schoolplanner/* create a file name *.env* and use the example file in *env_example* to fill it file
+6. Inside `schoolplanner/` create a file name `.env` and use the example file in `env_example` to fill it file
 
 ## <b>Launching of the project</b>
 
