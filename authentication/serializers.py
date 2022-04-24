@@ -56,24 +56,6 @@ class InstitutionSerializer(ModelSerializer):
             logo=validated_data['logo'],
             description=validated_data['description'])
 
-    def create(self, validated_data):
-
-        user_data = validated_data.pop('user')
-        last_name = user_data['last_name']
-        username = user_data['email']
-        email = user_data['email']
-        password = user_data['password']
-        user = User.objects.create_user(username=username,
-                                        last_name=last_name,
-                                        email=email,
-                                        password=password)
-
-        return Institution.objects.create(
-            user=user,
-            name=validated_data['name'],
-            logo=validated_data['logo'],
-            description=validated_data['description'])
-
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=255, min_length=3)
