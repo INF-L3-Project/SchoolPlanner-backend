@@ -32,10 +32,12 @@ class InstitutionSerializer(ModelSerializer):
         """
         Check if there an user with the same email.
         """
+        new_user = data['user']
+        new_username = new_user['email']
         if Institution.objects.filter(
-                user__username=data.get('email')).exists():
+                user__username=new_username).exists():
             raise serializers.ValidationError(
-                "this email has already registered")
+                "This email has already registered")
         return data
 
     def create(self, validated_data):
