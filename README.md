@@ -25,58 +25,44 @@ This is  a web application that allows school administrators to easily manage th
 
 ![Website overview](./screenshots/overview.png)
 
-## <b>Project setup</b>
+
+## Want to use this project?
 
 1. Clone the repositiory into your workstation (device/machine) by running the command: <br>
 
         git clone https://github.com/INF-L3-Project/SchoolPlanner-backend.git
 
-2. Place yourself at the root of the project. <br>
-   
-        C:\Users\...\SchoolPlanner-backend\
 
-### Before executing the following commands, always make sure you are at the root of the project.
+2. Create and activate a virtual environment:
 
-3. Setup the virtual environment for the project at its root by running the following commands: <br>
-    `Creation/Installation`
+   ```sh
+   $ python3 -m venv venv && source venv/bin/activate
+   ```
 
-        1. pip install virtualenv
-        2. virtualenv .env
-   
-    `Activation on Windows`
-    
-        3. .env\Scripts\activate
-   
-    `Activation on Linux/MacOS`
-    
-        3. source .env/bin/activate
+3. Install the requirements:
 
-    To deactivate the already activated virtual environment, simply type `deactivate` in the terminal, if not run the following command: <br>
+   ```sh
+   (venv)$ pip install -r requirements.txt
+   ```
 
-    `Deactivation on Windows`
+4. Apply the migrations:
 
-        .env\Scripts\deactivate
-
-    `Deactivation on Linux/MacOS`
-
-        source .env/bin/deactivate
-
-4. Inside the created and activated virtual environment, `Install` the required packages from [requirements.txt](./requirements.txt) by running the command: <br>
-
-        pip install -r requirements.txt
-
+   ```sh
+   (venv)$ python manage.py migrate
+   ```
 6. Inside `schoolplanner/` create a file name `.env` and use the example file in `env_example` to fill it file
 
-## <b>Launching of the project</b>
+5. Seed the database:
 
-### Before executing the following commands, always make sure you are at the root of the project.
+   ```sh
+   (venv)$ python manage.py migrate
+   ```
 
-5. Migrate the data to the database : <br>
+6. Run the server:
 
-        python manage.py migrate
+   ```sh
+   (venv)$ python manage.py runserver
+   ```
 
-6. Run the project using the command: <br>
-
-        python manage.py runserver
 
 7. Check the server is running by going to [localhost:8000](http://127.0.0.1:8000)
