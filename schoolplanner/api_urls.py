@@ -16,6 +16,6 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('authentication/', include(('authentication.api_urls', 'authentication'))),
-    path('level_field_class/', include(('level_field_class.api_urls', 'level_field_class'))),
+    path('', include(('level_field_class.api_urls', 'level_field_class'))),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
