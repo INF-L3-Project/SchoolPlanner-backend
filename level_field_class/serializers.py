@@ -6,30 +6,25 @@ class FieldSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Field
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'abr')
 
 
 class LevelSerializer(serializers.ModelSerializer):
-    
+
     class Meta:
         model = Level
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'abr')
 
 
 class GradeSerializer(serializers.ModelSerializer):
 
-    level = LevelSerializer()
-    field = FieldSerializer()
-    
     class Meta:
         model = Grade
-        fields = ('id', 'name', 'capacity', 'level', 'field')  
+        fields = ('id', 'field', 'level', 'capacity', 'name')
 
 
 class GroupSerializer(serializers.ModelSerializer):
 
-    grade = GradeSerializer()
-    
     class Meta:
         model = Group
         fields = ('id', 'name', 'capacity', 'grade')
