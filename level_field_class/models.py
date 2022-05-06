@@ -38,4 +38,4 @@ class Group(models.Model):
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.grade.abr}-{self.name}'
+        return f'{self.grade.name}-{self.name}'
